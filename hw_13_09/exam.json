@@ -1,0 +1,50 @@
+[
+    {
+        "question": "What is primitive data type in Python?",
+        "answers": [
+            "Tuple",
+            "Structure",
+            "Integer"
+        ],
+        "correct_answer": "3"
+    },
+    {
+        "question": "What is immutable data type in Python?",
+        "answers": [
+            "List",
+            "Frozenset",
+            "Set"
+        ],
+        "correct_answer": "2"
+    },
+
+        {
+        "question": "What methode remove the item at the given position in the list?",
+        "answers": [
+            "pop([i])",
+            "remove(i)",
+            "append(i)"
+        ],
+        "correct_answer": "1"
+    },
+
+    {
+        "question": "What code used recursion?",
+        "answers": [
+            "n = int(input())\n factorial = 1\n while n > 1:\n factorial *= n\n n -= 1",
+            "n = int(input())\n factorial = 1\n for i in range(2, n+1):\n factorial *= i",
+            "def fac(n):\n    if n == 0:\n  return 1\n    return fac(n-1) * n"
+        ],
+        "correct_answer": "3"
+    },
+
+        {
+        "question": "Python is...",
+        "answers": [
+            "compiler language",
+            "interpreter language",
+            "embedded language"
+        ],
+        "correct_answer": "2"
+    }
+]
