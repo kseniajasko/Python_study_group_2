@@ -1,9 +1,9 @@
 import io
 import unittest
 from unittest.mock import patch, Mock
+from datetime import datetime
 
-from les_16_10_part_2 import Maps, Task, Dashboard
-
+from task_2 import Task, Dashboard
 
 LOCATION_DICT = {
     'candidates': [
@@ -38,8 +38,8 @@ class TestTask(unittest.TestCase):
         self.assertIsInstance(dashboard.task_list, list)
         self.assertEqual(len(dashboard.task_list), 0)
 
-    @patch('builtins.input', return_value='My test task')
-    def test_add_task(self, mock_input):
+    @patch('builtins.input', side_effect=['My test task', 1])
+    def test_using_side_effect(self, mock_input):
         dashboard = Dashboard()
         dashboard.add_task()
         self.assertEqual(len(dashboard.task_list), 1)
@@ -70,6 +70,13 @@ class TestTask(unittest.TestCase):
         self.assertEqual(mock_stdout.getvalue(),
             'My test task\nMy second task\n')
 
+    def test_print_all_tasks_by_priority(self):
+        task1 = Task('My test task', 2)
+        task2 = Task('My second task', 5)
+        dashboard = Dashboard()
+        dashboard.task_list.extend([task1, task2])
+        self.assertEqual(dashboard.print_all_tasks_by_priority(2), [task1.title])
+
     def test_sort_task_by_title(self):
         task1 = Task('D task')
         task2 = Task('A task')
@@ -95,14 +102,23 @@ class TestTask(unittest.TestCase):
         task.add_location()
         self.assertIsNone(task.location)
 
-    def test_dump_to_json(self):
+    def test_json(self):
         task1 = Task('D task')
         task2 = Task('A task')
         dashboard = Dashboard()
         dashboard.task_list.extend([task1, task2])
-        dashboard.dump_to_json()
+        filename = 'tasks_{}.json'.format(datetime.now().strftime('%Y%m%d%H%M%S'))
+        dashboard.dump_to_json(filename)
+        dashboard.load_from_json(filename)
 
-
+    def test_сsv(self):
+        task1 = Task('D task')
+        task2 = Task('A task')
+        dashboard = Dashboard()
+        dashboard.task_list.extend([task1, task2])
+        filename = 'test.csv'
+        dashboard.dump_csv(filename)
+        dashboard.load_csv(filename)
 
 
 

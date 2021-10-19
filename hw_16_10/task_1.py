@@ -86,9 +86,9 @@ class SignedInt:
 
 class Matrix:
     elements = []
-    current = 0
 
     def __init__(self, size):
+
         for index in range(size):
             modulus = pow(index, index)
             if index % 2:
@@ -98,9 +98,11 @@ class Matrix:
             self.elements.append(SignedInt(modulus, sign))
 
     def __iter__(self):
+        self.current = 0
         return self
 
     def __next__(self):
+
         if self.current > len(self.elements) - 1:
             raise StopIteration
         else:
@@ -114,6 +116,7 @@ if __name__ == '__main__':
 
     for element in m:
         print(element)
+
 
 # print(a > b)
 # print(a < b)
