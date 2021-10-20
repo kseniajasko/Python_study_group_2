@@ -25,6 +25,24 @@ class Student:
         else:
             self._age = age
 
+    def str_age(self):
+        return str(self.age)
+
+    def __gt__(self, other):
+        return self.str_age() > other.str_age()
+
+    def __lt__(self, other):
+        return self.str_age() < other.str_age()
+
+    def __ge__(self, other):
+        return self.str_age() >= other.str_age()
+
+    def __le__(self, other):
+        return self.str_age() <= other.str_age()
+
+    def __eq__(self, other):
+        return self.str_age() == other.str_age()
+
     def validate(self, email):
         if (re.match("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$", email)):
             return email
@@ -35,21 +53,21 @@ class Student:
         return f'[{self.first_name}, {self.last_name}, {self.email}, {self.age}, {self.address}, {self.gender}]'
 
     def print_student(self):
-        return f"First Name: {self.first_name}\nLast Name: {self.last_name}\nEmail: {self.email}\nAge:{self.age}\nAddress: {self.address}\nGender: {self.gender}\n"
+        return f"First Name: {self.first_name}\nLast Name: {self.last_name}\nEmail: {self.email}\nAge: {self.age}\nAddress: {self.address}\nGender: {self.gender}\n"
 
-    def student_age_compare(self, temp_student):
-        if not isinstance(temp_student, Student):
-            return f'Error Student type'
-        ages_diff = self.age - temp_student.age
-
-        if ages_diff > 0:
-            return f'Student {self.first_name} {self.last_name} is older, than student {temp_student.first_name} {temp_student.last_name} for {ages_diff} years'
-
-        elif ages_diff == 0:
-            return f'Student {self.first_name} {self.last_name} is peer of student {temp_student.first_name} {temp_student.last_name}'
-
-        else:
-            return f'Student {self.first_name} {self.last_name} is younger, than student {temp_student.first_name} {temp_student.last_name} for {abs(ages_diff)} years'
+    # def student_age_compare(self, temp_student):
+    #     if not isinstance(temp_student, Student):
+    #         return f'Error Student type'
+    #     ages_diff = self.age - temp_student.age
+    #
+    #     if ages_diff > 0:
+    #         return f'Student {self.first_name} {self.last_name} is older, than student {temp_student.first_name} {temp_student.last_name} for {ages_diff} years'
+    #
+    #     elif ages_diff == 0:
+    #         return f'Student {self.first_name} {self.last_name} is peer of student {temp_student.first_name} {temp_student.last_name}'
+    #
+    #     else:
+    #         return f'Student {self.first_name} {self.last_name} is younger, than student {temp_student.first_name} {temp_student.last_name} for {abs(ages_diff)} years'
 
     def from_dict(temp_dict: dict):
         return Student(temp_dict['first_name'], temp_dict['last_name'], temp_dict['email'], temp_dict['age'], temp_dict['address'], temp_dict['gender'])
@@ -110,13 +128,15 @@ if __name__ == '__main__':
     student_1 = Student('Ok', 'Sat', 'kl@gmail.com', 26, 'Kyiw', 'W')
     student_2 = Student('Dm', 'Sat', 'dimi@gmail.com', 28, 'Kyiw', 'M')
     student_3 = Student.from_dict(dict_1)
+    # print(student_1 > student_2)
+    # print(student_1 <= student_2)
     lesson_1 = Lesson(student_1, '17.10', 'yes', 5)
     #print(lesson_1)
     group_1 = Group('First group')
     group_1.add_student(student_1)
     group_1.add_student(student_2)
     group_1.add_student(student_3)
-    group_1.print_strudents_list()
+    # group_1.print_strudents_list()
     # print(group_1.group_calculate_avg_age())
     # print(student_1.student_age_compare(student_2))
     # print(student_1.print_student())
