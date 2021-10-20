@@ -10,25 +10,23 @@ exp_2 = [i for i in experiments if isinstance(i, int)]
 max_elem = max(exp_2)
 
 if max_elem in range(0, 7, 1):
-    print('6-, 12-, 20-face cube')
+    list_all_event = [x for x in range(1, 7, 1)]
+    print(f'6-face cube')
 elif max_elem in range(7, 13, 1):
-    print('12- or 20-face cube')
+    list_all_event = [x for x in range(1, 13, 1)]
+    print(f'12-face cube')
 else:
+    list_all_event = [x for x in range(1, 21, 1)]
     print('20-face cube')
 
 b = Counter(exp_2)
 
-exp_3 = []
 
-for i in exp_2:
-    if i not in exp_3:
-        exp_3.append(i)
-
-exp_3.sort()
-print(exp_2)
-print(exp_3)
-for i in exp_3:
+for i in list_all_event:
     print(f'Probability face {i} of cube is equal {probability(b[i], len(exp_2))}')
 
-
-
+# sum_probability = 0
+# for i in list_all_event:
+#     sum_probability += probability(b[i], len(exp_2))
+#
+# print(sum_probability)
