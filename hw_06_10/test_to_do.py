@@ -84,22 +84,22 @@ class TestTask(unittest.TestCase):
         self.assertEqual(dashboard.sort_by_title(),
             [task2, task1])
 
-    # @patch('googlemaps.Client.find_place', return_value=LOCATION_DICT)
-    # @patch('builtins.input', return_value='Dream Town')
-    # def test_add_location(self, input_mock, maps_mock):
-    #     task = Task('My test task', 1)
-    #     self.assertIsNone(task.location)
-    #     task.add_location()
-    #     self.assertIsNotNone(task.location)
-    #     self.assertTrue('coordinates' in task.location)
+    @patch('googlemaps.Client.find_place', return_value=LOCATION_DICT)
+    @patch('builtins.input', return_value='Dream Town')
+    def test_add_location(self, input_mock, maps_mock):
+        task = Task('My test task', 1)
+        self.assertIsNone(task.location)
+        task.add_location()
+        self.assertIsNotNone(task.location)
+        self.assertTrue('coordinates' in task.location)
 
-    # @patch('googlemaps.Client.find_place', return_value=LOCATION_WITH_ERROR_DICT)
-    # @patch('builtins.input', return_value='Dream Town')
-    # def test_add_location_with_error(self, input_mock, maps_mock):
-    #     task = Task('My test task')
-    #     self.assertIsNone(task.location)
-    #     task.add_location()
-    #     self.assertIsNone(task.location)
+    @patch('googlemaps.Client.find_place', return_value=LOCATION_WITH_ERROR_DICT)
+    @patch('builtins.input', return_value='Dream Town')
+    def test_add_location_with_error(self, input_mock, maps_mock):
+        task = Task('My test task')
+        self.assertIsNone(task.location)
+        task.add_location()
+        self.assertIsNone(task.location)
 
     def test_dump_to_json(self):
         task1 = Task('D task')
