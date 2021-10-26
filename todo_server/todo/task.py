@@ -1,7 +1,8 @@
 from flask import Blueprint, request, abort, jsonify
 
 from .models import Task
-from .binary_search import binary_search
+
+from ..utils.binary_search import binary_search
 
 bp = Blueprint('task', __name__)
 
