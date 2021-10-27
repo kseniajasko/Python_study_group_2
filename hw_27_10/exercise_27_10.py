@@ -45,12 +45,12 @@ class Container:
     def __init__(self):
         self.elements = []
 
-    def add(self, el):
+    def add(self, new_element):
         if len(self.elements) == 0:
-            self.elements.append(el)
+            self.elements.append(new_element)
         else:
-            if type(el) == type(self.elements[0]):
-                self.elements.append(el)
+            if type(new_element) == type(self.elements[0]):
+                self.elements.append(new_element)
             else:
                 raise TypeError("Anothere type element")
 
