@@ -17,9 +17,9 @@ def task_list():
         order = request.args.get(
             'order', default = '', type = str)
         if order:
-            bubble_sort(Task.objects, order)
+            bubble_sort(Task.copy_objects, order)
         else:
-            insertion_sort(Task.objects)
+            insertion_sort(Task.copy_objects)
     return render_template('task_list.html', tasks=Task.objects)
 
 

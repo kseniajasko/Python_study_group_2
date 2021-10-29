@@ -3,6 +3,7 @@ import json
 class Task:
 
     objects = []
+    copy_objects = objects.copy()
 
     def __init__(self, title, priority=1):
         self.id = len(Task.objects) + 1

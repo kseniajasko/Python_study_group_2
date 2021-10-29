@@ -60,8 +60,8 @@ class Container:
 
 
 
-# container_1 = Container()
-# container_1.add('aszbb')
-# container_1.add('cszhd')
-# container_1.add('bshshh')
-# print(container_1)
+container_1 = Container()
+container_1.add('aaabb')
+container_1.add('aaad')
+container_1.add('aaachh')
+print(container_1)
