@@ -23,7 +23,7 @@ def task_list():
             bubble_sort(tasks, order)
         else:
             insertion_sort(Task.objects)
-    return render_template('task_list.html', tasks=tasks)
+    return render_template('task_list.html', tasks=Task.objects)
 
 
 @bp.route('/<int:task_id>')

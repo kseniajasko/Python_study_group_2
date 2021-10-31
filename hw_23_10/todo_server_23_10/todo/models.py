@@ -3,7 +3,7 @@ import json
 class Task:
 
     objects = []
-
+    task_id = []
     def __init__(self, title, priority=1):
         self.id = len(Task.objects) + 1
         self.done = False
@@ -12,6 +12,8 @@ class Task:
         self.location = None
         self.tag = None
         Task.objects.append(self)
+        Task.task_id.append(self.id)
+
 
     def __str__(self):
         return self.title

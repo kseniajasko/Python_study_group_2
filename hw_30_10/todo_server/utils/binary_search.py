@@ -24,9 +24,9 @@ def binary_search_by_id(array, element, low=None, high=None):
     if high >= low:
         mid = (high + low) // 2
 
-        if array[mid] == element:
+        if array[mid].id == element:
             return array[mid]
-        elif array[mid] > element:
+        elif array[mid].id > element:
             return binary_search(array, element, low, mid - 1,)
         else:
             return binary_search(array, element, mid + 1, high)
