@@ -12,7 +12,7 @@ while n > 0:
 # 2. Для числа 13195 існують такі прості дільники (прості числа, на яке задане число ділиться без залишку):
 # 5, 7, 13, 29. Знайти найбільший простий дільник числа 600851475143.
 
-def Largest_Prime_Factor(n):
+def largest_prime_factor(n):
     prime_factor = 1
     i = 2
 
@@ -28,18 +28,18 @@ def Largest_Prime_Factor(n):
 
     return int(prime_factor)
 
-# print(Largest_Prime_Factor(10))
+# print(largest_prime_factor(10))
 
 
 
 # 3. 2520 найменше число, що ділиться на будь-яке число від 1 до 10 без залишку. Яке найменше позитивне число ділиться без залишку на всі числа від 1 до 20?
 import functools
 import math
-# LCM - least common multiple
-def LCM(min_number, max_number):
+# lms - least common multiple
+def lms(min_number, max_number):
     return functools.reduce(lambda x,y: x*y//math.gcd(x, y), range(min_number, max_number))
 
-#print(LCM(1, 10))
+#print(lms(1, 10))
 
 
 # 4. Триплет Піфагора - це набір з трьох натуральних чисел a < b < c, для якого a**2 + b**2 = c**2. Наприклад,  3**2 + 4**2 = 9 + 16 = 25 = 5**2.
