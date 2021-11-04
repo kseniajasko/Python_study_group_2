@@ -51,7 +51,7 @@ class LinkedList:
 
     def print_list(self):
         if self.head is None:
-            print("List has no element")
+            print('List has no element')
             return
         else:
             current = self.head
@@ -98,17 +98,15 @@ class LinkedList:
 
     def find_element(self, data):
         if self.head is None:
-            print("List has no elements")
+            print('List has no elements')
             return
 
         current = self.head
         while current is not None:
             if current.data == data:
-               print('Item found')
-               return True
+               return current.data
             current = current.next
-        print("item not found")
-        return False
+        return f'Item not found'
 
     @property
     def length(self):
@@ -121,19 +119,19 @@ class LinkedList:
             current = current.next
         return count
 
-if __name__ == "__main__":
-    the_list = LinkedList(1)
-    the_list.add_element(2)
-    the_list.add_element(3)
-    the_list.add_element(10)
-    the_list.insert_at_start(11)
-    the_list.insert_at_end(20)
-    the_list.insert_at_index(2, 13)
-    # the_list.extend([4,8,10])
-    # the_list.print_list()
-
-    # the_list.find_element(13)
-    print(the_list.length)
-
-    # for element in the_list:
-    #     print(element.data)
+# if __name__ == "__main__":
+#     the_list = LinkedList(1)
+#     the_list.add_element(2)
+#     the_list.add_element(3)
+#     the_list.add_element(10)
+#     the_list.insert_at_start(11)
+#     the_list.insert_at_end(20)
+#     the_list.insert_at_index(2, 13)
+#     the_list.extend([4,8,10])
+#     the_list.print_list()
+#
+#     print(the_list.find_element(13))
+#     print(the_list.length)
+#
+#     for element in the_list:
+#         print(element.data)
