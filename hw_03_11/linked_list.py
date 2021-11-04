@@ -78,7 +78,6 @@ class LinkedList:
             current = current.next
         current.next = new_element
 
-
     def insert_at_index (self, index, data):
         if index == 0:
             self.insert_at_start(data)
