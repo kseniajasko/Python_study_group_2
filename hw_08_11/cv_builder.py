@@ -1,7 +1,9 @@
+import os
 import re
 import json
 
 from datetime import datetime
+
 
 def bubble_sort(nums):
     swapped = True
@@ -11,7 +13,8 @@ def bubble_sort(nums):
             if nums[i] < nums[i + 1]:
                 nums[i], nums[i + 1] = nums[i + 1], nums[i]
                 swapped = True
-    return(nums)
+    return (nums)
+
 
 class MultiDict:
     def __init__(self):
@@ -32,6 +35,7 @@ class MultiDict:
     def keys(self):
         return self.dict.keys()
 
+
 class Skill:
 
     def __init__(self, category, name, experience, level):
@@ -42,7 +46,7 @@ class Skill:
 
     @property
     def category(self):
-        return  self._category
+        return self._category
 
     @category.setter
     def category(self, skill):
@@ -64,7 +68,7 @@ class Skill:
 
     @property
     def level(self):
-        return  self._category
+        return self._category
 
     @level.setter
     def level(self, level):
@@ -73,12 +77,12 @@ class Skill:
         else:
             self._level = None
 
-
     def __gt__(self, other):
         return self._experience > other._experience
 
     def __repr__(self):
-        return f'[{self.name}, {self.experience}, {self.level}]'
+        return f'({self.name}, {self.experience}, {self.level})'
+
 
 class Contact:
 
@@ -104,14 +108,15 @@ class Contact:
     @value.setter
     def value(self, current_value):
         if self.contact_type.lower() == 'email':
-            if (re.match(r'^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$',
+
+            if (re.match("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$",
                          current_value)):
                 self._value = current_value
+
             else:
                 self._value = None
         elif self.contact_type.lower() == 'phone':
-            if re.match(r'^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$',
-                        current_value):
+            if re.match(r'^(?:\+?44)?[07]\d{9,13}$', current_value):
                 self._value = current_value
             else:
                 self._value = None
@@ -120,6 +125,7 @@ class Contact:
 
     def __repr__(self):
         return f'({self.contact_type}, {self.value})'
+
 
 class JobExperience:
 
@@ -154,12 +160,12 @@ class JobExperience:
     def __repr__(self):
         return f'({self.start_date}, {self.end_date}, {self.company}, {self.position})'
 
-class Person:
 
+class Person:
     persons = []
 
     def __init__(self, first_name, last_name, birth_date):
-        self.id = len(Person.persons)+1
+        self.id = len(Person.persons) + 1
         self.first_name = first_name
         self.last_name = last_name
         self.birth_date = birth_date
@@ -172,20 +178,17 @@ class Person:
     #     all_pearson = [t.__dict__ for t in self.persons]
     #     return f'{all_pearson}'
 
-    def __str__(self):
-        return f'{self.first_name} {self.last_name}'
-
     def __repr__(self):
-        return f'{self.first_name} {self.last_name}'
+        return f"{self.first_name} {self.last_name}"
 
     def all_skills(self):
-     #   all_skills = [t.__dict__ for t in self.skills]
+        #   all_skills = [t.__dict__ for t in self.skills]
         tmp_dict = MultiDict()
         for skill in self.skills:
             tmp_dict[skill._category] = skill
         tmp_dict_sorted = dict()
         for key in tmp_dict.keys():
-           tmp_dict_sorted[key] = bubble_sort(tmp_dict[key])
+            tmp_dict_sorted[key] = bubble_sort(tmp_dict[key])
         return tmp_dict_sorted
 
     def add_contact(self, current_contact: Contact):
@@ -230,27 +233,32 @@ class Person:
 
     def sort_experience(self):
         func_date = lambda d: (datetime.strptime(d.start_date, '%d.%m.%Y')
-                               -datetime.strptime(d.end_date, '%d.%m.%Y')).days
+                               - datetime.strptime(d.end_date, '%d.%m.%Y')).days
         return sorted(self.experiences, key=func_date)
-
 
     def to_json(self):
         return json.dumps(self.__dict__)
 
-    @classmethod
-    def get_list(cls):
-        return cls.persons
+    def dump_json(self):
+        file_name = 'person.json'
+        path_json = os.path.join(os.getcwd(), 'data', file_name)
+        person_list = str([t.__dict__ for t in self.persons])
+        with open(path_json, 'w') as file:
+            json.dump(person_list, file)
 
     @classmethod
-    def list_to_json(cls):
-        person_list = [t.__dict__ for t in cls.objects]
-        return json.dumps(person_list)
+    def load_json(cls):
+        file_name = 'person.json'
+        path_json = os.path.join(os.getcwd(), 'data', file_name)
+        with open(path_json, 'r') as file:
+            dict_person = json.load(file)
+        return dict_person
 
 
 if __name__ == '__main__':
     my_person = Person('Oksana', 'Satur', '03.05.1995')
 
-    contact1 = Contact('email', 'oksanagmail.com')
+    contact1 = Contact('email', 'oksana@gmail.com')
     contact2 = Contact('phone', '0956380996')
     skill_1 = Skill('technologies', 'python', 3, 'beginner')
     skill_2 = Skill('technologies', 'JS', 1, 'beginner')
@@ -283,4 +291,5 @@ if __name__ == '__main__':
     # my_person.all_skills()
     # print(my_person.experiences)
     # print(my_person.sort_experience())
-
+    my_person.dump_json()
+    # print(my_person.load_json())
