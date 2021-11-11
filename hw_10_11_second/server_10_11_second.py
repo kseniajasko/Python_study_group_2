@@ -1,5 +1,6 @@
 import json
 
+import requests
 from flask import Blueprint, request, abort, render_template, make_response, jsonify
 
 from .cv_builder import *
@@ -10,22 +11,30 @@ data = [Person('Satur', 'Oksana', 26), Person('Satur', 'Sirko', 4)]
 
 @bp.route('/add-person', methods=['POST', 'GET'])
 def add_person():
-   # req = request.get_json()
-
-    file_name = 'temp.json'
-    path_json = os.path.join(os.getcwd(), 'hw_10_11_second/data', file_name)
-    with open(path_json, 'r') as file:
-        req = json.load(file)
+    req = request.get_json()
 
     if not req['first_name'] or not req['last_name'] or not req['birth_date']:
         res = make_response(jsonify({"error": "Error first_name or last_name or birth_date"}), 400)
         return res
 
     new_person = Person(req['first_name'], req['last_name'], req['birth_date'])
-
-    res = make_response(jsonify({"message": "Pearson created"}), 201)
-
+    res = make_response(jsonify({"message": "Pearson created", "id": new_person.id}), 201)
     return res
+
+@bp.route('/edit-person', methods=['PATCH', 'GET'])
+def edit_person():
+    req = request.get_json()
+
+    for person in Person.persons:
+        if person.id == int(req['id']):
+            person.first_name = req['first_name']
+            person.last_name = req['last_name']
+            person.birth_date = req['birth_date']
+            res = make_response(jsonify({"message": "Person updated"}), 201)
+            return res
+    else:
+        res = make_response(jsonify({"error": "Pearson not found"}), 400)
+        return res
 
 @bp.route('/', methods=['GET', 'POST'])
 def person_list():
