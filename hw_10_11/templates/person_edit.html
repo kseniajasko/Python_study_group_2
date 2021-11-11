@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit person{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="first_name">First name</label>
+    <input name="first_name" id="first_name" required value="{{person.first_name}}">
+    <label for="last_name">Last name</label>
+    <input name="last_name" id="last_name" required value="{{person.last_name}}">
+    <label for="birth_date">Birth date</label>
+    <input name="birth_date" id="birth_date" required value="{{person.birth_date}}">
+    <input type="submit" value="Edit person">
+  </form>
+
+{% endblock %}

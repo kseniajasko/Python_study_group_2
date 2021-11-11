@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Builder{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="first_name">First name</label>
+    <input name="first_name" id="first_name" required>
+    <label for="last_name">Last name</label>
+    <input name="last_name" id="last_name" required>
+    <label for="birth_date">Birth date</label>
+    <input name="birth_date" id="birth_date" required>
+    <input type="submit" value="Add person">
+  </form>
+  <br>
+  <ul id="person-list">
+    {% for person in persons %}
+      <li><a href="{{ url_for('person.person_detail', person_id=person.id) }}"> {{person.last_name }} {{person.first_name }} - id {{person.id}} </a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

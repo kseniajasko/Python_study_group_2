@@ -1,0 +1,8 @@
+html{
+    min-height: 100%;
+}
+html {
+	background: url('/static/image/image2.jpg') center center no-repeat;
+	/*background-size: cover;*/
+
+}
