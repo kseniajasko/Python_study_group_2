@@ -12,7 +12,7 @@ def summa_in_money(summa):
     nominal = [1000, 500, 200, 100, 50, 20, 10, 5, 2, 1]
     current_summa = int_number
     i = 0
-    while i < len(nominal)-1:
+    while i < len(nominal):
         division = current_summa//nominal[i]
         if division > 0:
             money_dict[nominal[i]] = division
@@ -35,6 +35,6 @@ def summa_in_money(summa):
     else:
         return penny_dict
 
-# print(summa_in_money(277538.56))
+print(summa_in_money(277888.58))
 # print(summa_in_money(0.56))
 # print(summa_in_money(277538))
