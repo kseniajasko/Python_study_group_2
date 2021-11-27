@@ -251,7 +251,7 @@ class Person:
         return json.dumps(self.__dict__)
 
     def dump_json(self):
-        file_name = 'person.json'
+        file_name = '122.json'
         path_json = os.path.join(os.getcwd(), 'data', file_name)
         person_list = str([t.__dict__ for t in self.persons])
         with open(path_json, 'w') as file:
@@ -259,7 +259,7 @@ class Person:
 
     @classmethod
     def load_json(cls):
-        file_name = 'person.json'
+        file_name = '122.json'
         path_json = os.path.join(os.getcwd(), 'data', file_name)
         with open(path_json, 'r') as file:
             dict_person = json.load(file)

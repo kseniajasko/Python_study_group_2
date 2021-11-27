@@ -1,0 +1,48 @@
+{
+    "name": ".",
+    "type": "directory",
+    "children": [
+        {
+            "name": "app.log",
+            "type": "file"
+        },
+        {
+            "name": "console_manager.py",
+            "type": "file"
+        },
+        {
+            "name": "data",
+            "type": "directory",
+            "children": [
+                {
+                    "name": "folder_structure.json",
+                    "type": "file"
+                }
+            ]
+        },
+        {
+            "name": "dir1",
+            "type": "directory",
+            "children": [
+                {
+                    "name": "dir2",
+                    "type": "directory",
+                    "children": [
+                        {
+                            "name": "dir3",
+                            "type": "directory"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "exercise.txt",
+            "type": "file"
+        },
+        {
+            "name": "text1.txt",
+            "type": "file"
+        }
+    ]
+}
