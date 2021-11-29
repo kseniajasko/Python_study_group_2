@@ -3,10 +3,6 @@
     "type": "directory",
     "children": [
         {
-            "name": "app.log",
-            "type": "file"
-        },
-        {
             "name": "console_manager.py",
             "type": "file"
         },
@@ -31,8 +27,26 @@
                         {
                             "name": "dir3",
                             "type": "directory"
+                        },
+                        {
+                            "name": "text1.txt",
+                            "type": "file"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "name": "dir_logging",
+            "type": "directory",
+            "children": [
+                {
+                    "name": "app_info.log",
+                    "type": "file"
+                },
+                {
+                    "name": "app_warning.log",
+                    "type": "file"
                 }
             ]
         },
@@ -41,8 +55,22 @@
             "type": "file"
         },
         {
-            "name": "text1.txt",
+            "name": "proba3",
+            "type": "directory"
+        },
+        {
+            "name": "test_manager.py",
             "type": "file"
+        },
+        {
+            "name": "__pycache__",
+            "type": "directory",
+            "children": [
+                {
+                    "name": "console_manager.cpython-37.pyc",
+                    "type": "file"
+                }
+            ]
         }
     ]
 }
