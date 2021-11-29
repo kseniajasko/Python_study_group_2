@@ -80,7 +80,7 @@ def create_rectangle(file_name, tmp_tuple):
 #     create_thumbnail("img2.jpg")
 #     is_thumbnail("thumbnail.jpg")
 #     rotate_image("img1.jpg", 45)
-#     flip_image("img1.jpg", 'LR')
+#     flip_image("img1.jpg", "LR")
 #     copy_images_to_dir("images")
 #     print(delete_images("img2.png"))
 #     print("Done!")
