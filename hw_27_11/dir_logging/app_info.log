@@ -1,0 +1,16 @@
+29-Nov-21 14:35:52 -INFO- Method list_dir
+29-Nov-21 14:35:52 -INFO- Method all_dir
+29-Nov-21 14:35:52 -INFO- File size console_manager.py is given
+29-Nov-21 14:35:52 -INFO- Catalogues Dump to json folder_structure.json
+29-Nov-21 14:35:52 -WARNING- Method new_folder: Folder proba3 exist
+29-Nov-21 14:36:09 -WARNING- Method new_folder: Folder proba3 exist
+29-Nov-21 14:36:16 -INFO- Method list_dir
+29-Nov-21 14:36:16 -INFO- Method all_dir
+29-Nov-21 14:36:16 -INFO- File size console_manager.py is given
+29-Nov-21 14:36:16 -INFO- Catalogues Dump to json folder_structure.json
+29-Nov-21 14:36:16 -WARNING- Method new_folder: Folder proba3 exist
+29-Nov-21 14:36:28 -INFO- Method list_dir
+29-Nov-21 14:36:28 -INFO- Method all_dir
+29-Nov-21 14:36:28 -INFO- File size console_manager.py is given
+29-Nov-21 14:36:28 -INFO- Catalogues Dump to json folder_structure.json
+29-Nov-21 14:36:28 -INFO- Create new folder proba5
