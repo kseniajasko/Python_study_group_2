@@ -24,7 +24,7 @@ def is_square_image(file):
 def create_thumbnail(file):
     #TODO: handle all errors on thumbnail creation
 
-    if not  file.endswith(('.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.gif')):
+    if not  file.endswith((".png", ".jpg", ".jpeg", ".tiff", ".bmp", ".gif")):
         raise FileNotFoundError("Wrong file extension ")
 
     if not os.path.isfile(file):
@@ -49,19 +49,19 @@ def flip_image(file, direction):
     directions = {"LR": Image.FLIP_LEFT_RIGHT, "TB": Image.FLIP_TOP_BOTTOM}
     image = Image.open(file)
     out = image.transpose(directions[direction])
-    out.save('flipped.jpg')
+    out.save("flipped.jpg")
 
 def copy_images_to_dir(dirname):
     '''Copies all images from current folder into subfolder'''
 
     for file in os.listdir():
-        if file.endswith(('.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.gif')):
+        if file.endswith((".png", ".jpg", ".jpeg", ".tiff", ".bmp", ".gif")):
             image = Image.open(file)
             image.save(os.path.join(os.getcwd(), dirname, image.filename))
 
 def delete_images(file_name):
     for file in os.listdir():
-        if file.endswith(('.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.gif')):
+        if file.endswith((".png", ".jpg", ".jpeg", ".tiff", ".bmp", ".gif")):
             if file == file_name:
                 os.remove(file_name)
                 return f"File {file_name} removed"
