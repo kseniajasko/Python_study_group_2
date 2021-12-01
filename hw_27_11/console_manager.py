@@ -114,7 +114,7 @@ def file_size(file_name):
     # new_folder('proba4')
     # rename_folder('proba3', 'proba1')
     # delete_folder('proba1')
-    # new_file("text.txt")
-    # rename_file("text.txt", "text1.txt" )
+    # new_file("text1.txt")
+    # rename_file("text1.txt", "text1.txt" )
     # replace_file_path("text1.txt", "dir1/dir2/text1.txt")
 

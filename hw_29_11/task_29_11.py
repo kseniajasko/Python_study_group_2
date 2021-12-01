@@ -24,7 +24,7 @@ def is_square_image(file):
 def create_thumbnail(file):
     #TODO: handle all errors on thumbnail creation
 
-    if not  file.endswith((".png", ".jpg", ".jpeg", ".tiff", ".bmp", ".gif")):
+    if not file.endswith((".png", ".jpg", ".jpeg", ".tiff", ".bmp", ".gif")):
         raise FileNotFoundError("Wrong file extension ")
 
     if not os.path.isfile(file):

@@ -15,8 +15,8 @@ def load_image(url, save_image_name):
     image.save(os.path.join(os.getcwd(), save_image_name))
 
 thr1 = threading.Thread(target=load_image, args=(URL1, "imageURL1.png",))
-thr2 = threading.Thread(target=load_image, args=(URL2, "imageURL2.jpg",))
-thr3 = threading.Thread(target=load_image, args=(URL3, "imageURL3.jpg",))
+thr2 = threading.Thread(target=load_image, args=(URL2, "image2.jpg",))
+thr3 = threading.Thread(target=load_image, args=(URL3, "image3.jpg",))
 thr4 = threading.Thread(target=load_image, args=(URL4, "imageURL4.jpg",))
 thr5 = threading.Thread(target=load_image, args=(URL5, "imageURL5.jpg",))
 
