@@ -45,7 +45,7 @@ def new_folder(folder_name: str):
         logging.info(f'Create new folder {folder_name}')
     else:
         logging.warning(f'Method new_folder: Folder {folder_name} exist')
-        raise FileNotFoundError('Folder exist')
+        raise FileExistsError('Folder exist')
 
 def rename_folder(folder_name, new_folder_name):
     if not os.path.isdir(folder_name):
@@ -67,7 +67,7 @@ def new_file(file_name):
         return open(file_name, "w")
     else:
         logging.warning(f'Method new_file: File exist {file_name}')
-        raise FileNotFoundError('File exist')
+        raise FileExistsError('File exist')
 
 def rename_file(file_name, new_file_name):
     if not os.path.exists(file_name):
@@ -92,7 +92,7 @@ def delete_file(file_name):
 
     if not os.path.isfile(file_name):
         logging.warning(f'Method delete_file:  {file_name} is not file')
-        raise FileNotFoundError("It's not file")
+        raise IsADirectoryError("It's not file")
 
     os.remove(file_name)
     logging.info(f'File {file_name} removed')
