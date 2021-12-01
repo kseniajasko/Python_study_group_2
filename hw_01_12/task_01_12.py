@@ -1,10 +1,11 @@
 from threading import Thread
+from multiprocessing import Process
 
-from PIL import Image
 import requests
 import os
+from PIL import Image
 import time
-from multiprocessing import Process
+
 
 def my_decorator(func):
     def wrapper(*args, **kwargs):
