@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}ADD POST{% endblock %}
+
+{% block caption %}All posts{% endblock %}
+
+{% block content %}
+
+  {% if message %}
+  <p style="color:green;">{{message}}</p>
+  {% endif %}
+
+  <form method="post">
+    <div class="output_msg">
+    {% for key in data %}
+        <p>
+        {% set a = key['post_id'] %}
+        {% set b = key['user'] %}
+        {% set c = key['title'] %}
+        {% set d = key['content'] %}
+
+        <b>{{a}} <br></b>
+        <i>{{b}} </i><br>
+        {{c}} <br>
+        {{d}} <br>
+        </p>
+    {% endfor %}
+    </div>
+  </form>
+
+
+
+
+
+{% endblock %}

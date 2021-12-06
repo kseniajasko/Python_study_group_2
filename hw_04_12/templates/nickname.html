@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}User page{% endblock %}
+
+{% block caption %}User page{% endblock %}
+
+{% block content %}
+  <form method="post">
+    {% if person.avatar and person.avatar != 'None' %}
+    <div class="text-align-center">
+      <img src="{{person.avatar}}" class="avatar" />
+    </div>
+    {% endif %}
+
+    <div>
+      <label for="email">email</label>
+      <input class="text-input" name="email" id="email" readonly value="{{person.email}}">
+    </div>
+    <div>
+      <label for="nickname">nickname</label>
+      <input class="text-input" name="nickname" id="nickname" readonly value="{{person.nickname}}">
+    </div>
+
+    <div>
+      <label for="avatar">avatar</label>
+      <input class="text-input" name="avatar" id="avatar"  value="{{person.avatar}}">
+    </div>
+
+    <div class="text-align-center">
+      <input type="submit" class="button" value="SAVE IMAGE">
+    </div>
+
+    <div class="text-align-center">
+      <a href="{{person.nickname}}/posts.html" class="button">POSTS </a>
+    </div>
+  </form>
+
+<div class="text-align-center">
+  <a href="news.html" class="button">NEWS </a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}ADD POST{% endblock %}
+
+{% block caption %}User posts{% endblock %}
+
+{% block content %}
+
+  {% if message %}
+  <p style="color:green;">{{message}}</p>
+  {% endif %}
+
+  <form method="post">
+  <div>
+    <label for="title">title</label>
+    <input class="text-input" name="title" id="title" required>
+  </div>
+
+  <div>
+    <label for="content">content</label>
+    <input class="text-input" name="content" id="content" required>
+  </div>
+
+    <div class="text-align-center">
+      <input type="submit" class="button" value="Creat post">
+    </div>
+
+    <div class="output_msg">
+    {% for key in data %}
+        <p>
+        {% set a = key['post_id'] %}
+        {% set b = key['title'] %}
+        {% set c = key['content'] %}
+
+          <b>{{a}} <br></b>
+        {{b}} <br>
+        {{c}} <br>
+        </p>
+    {% endfor %}
+    </div>
+  </form>
+
+
+
+
+{% endblock %}

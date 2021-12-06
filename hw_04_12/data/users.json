@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "_email": "orlassat@gmail.com",
+        "password": "32356",
+        "_nickname": "sirko",
+        "avatar": null
+    },
+    {
+        "id": "2",
+        "_email": "kseniajasko@gmail.com",
+        "password": "25532636",
+        "_nickname": "oksana",
+        "avatar": "https://static.remove.bg/remove-bg-web/126e8851f6e88bf644890fafdf1b0d82aff0629e/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
+    },
+    {
+        "id": "3",
+        "_email": "dimi@gmail.com",
+        "password": "1992",
+        "_nickname": "dimi",
+        "avatar": null
+    },
+    {
+        "id": "4",
+        "_email": "kfsag@gmail.com",
+        "password": "hdjjj",
+        "_nickname": "dhsjf",
+        "avatar": null
+    }
+]
