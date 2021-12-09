@@ -1,0 +1,17 @@
+[
+    {
+        "doctor_name": "Doctor4",
+        "work_day": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+        ],
+        "day_of_week": "Sun",
+        "time": 19,
+        "client": "yxdgecngka"
+    }
+]

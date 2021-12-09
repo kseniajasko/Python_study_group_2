@@ -1,0 +1,32 @@
+[
+    {
+        "doctor_name": "Doctor6",
+        "work_day": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+        ],
+        "day_of_week": "Thu",
+        "time": 20,
+        "client": "xhhfrskigp"
+    },
+    {
+        "doctor_name": "Doctor6",
+        "work_day": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+        ],
+        "day_of_week": "Fri",
+        "time": 13,
+        "client": "ezqmlhyuwl"
+    }
+]

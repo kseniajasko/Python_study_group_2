@@ -1,0 +1,47 @@
+[
+    {
+        "doctor_name": "Doctor9",
+        "work_day": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+        ],
+        "day_of_week": "Wed",
+        "time": 20,
+        "client": "rdcgihdifb"
+    },
+    {
+        "doctor_name": "Doctor9",
+        "work_day": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+        ],
+        "day_of_week": "Thu",
+        "time": 16,
+        "client": "fhofaudesg"
+    },
+    {
+        "doctor_name": "Doctor9",
+        "work_day": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+        ],
+        "day_of_week": "Sat",
+        "time": 12,
+        "client": "aqzuinxswi"
+    }
+]

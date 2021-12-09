@@ -1,0 +1,17 @@
+[
+    {
+        "doctor_name": "Doctor2",
+        "work_day": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+        ],
+        "day_of_week": "Sat",
+        "time": 15,
+        "client": "xsaprdbetg"
+    }
+]
